@@ -1,0 +1,9 @@
+.welcome_text{
+    margin-top: 10px;
+}
+.profile_container{
+    display: flex;
+}
+.profile_dropdown_container{
+    margin-top: 50px;
+}

@@ -1,0 +1,33 @@
+<div class="flex justify-center my-10">
+  <div
+    class="card card-border bg-base-300 w-96 border-solid shadow-md rounded-sm"
+  >
+    <div class="card-body">
+      <h2 class="card-title justify-center">Login</h2>
+      <div>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Email Id</legend>
+          <input
+            type="text"
+            class="input border-solid"
+            placeholder="Type here"
+            name="emailId"
+            [(ngModel)]="emailId"
+          />
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Password</legend>
+          <input
+            type="password"
+            name="password"
+            class="input border-solid"
+            [(ngModel)]="password"
+          />
+        </fieldset>
+      </div>
+      <div class="card-actions justify-center">
+        <button class="btn btn-primary" (click)="onLogin()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
