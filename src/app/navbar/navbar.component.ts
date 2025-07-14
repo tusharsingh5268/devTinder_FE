@@ -29,9 +29,11 @@ export class NavbarComponent implements OnInit {
     
   }
   onLogout(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
+    this.isLoggedInUser=false;
    this.authService.logOutApi().subscribe(res=>{
       console.log('res',res)
+      
       this.router.navigate(['/login'])
    },err=>{
     console.log('logout api',err)
