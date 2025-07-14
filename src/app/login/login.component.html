@@ -8,7 +8,7 @@
         <fieldset class="fieldset">
           <legend class="fieldset-legend">Email Id</legend>
           <input
-            type="text"
+            type="email"
             class="input border-solid"
             placeholder="Type here"
             name="emailId"
@@ -25,6 +25,7 @@
           />
         </fieldset>
       </div>
+      <p *ngIf="showErrorMessage" class="text-red-500">{{ loginErrMessage }}</p>
       <div class="card-actions justify-center">
         <button class="btn btn-primary" (click)="onLogin()">Login</button>
       </div>

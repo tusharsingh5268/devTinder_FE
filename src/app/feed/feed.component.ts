@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.css'
 })
-export class FeedComponent {
-
+export class FeedComponent implements OnInit {
+  constructor(private authService:AuthService,private router:Router){}
+  ngOnInit(): void {
+  
+  }
 }

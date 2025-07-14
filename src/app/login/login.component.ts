@@ -4,16 +4,19 @@ import {
 } from "@angular/forms";
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   emailId:string="chetansingh@gmail.com";
   password:string="Chetan@123";
+  loginErrMessage:string="";
+  showErrorMessage:boolean=false;
   constructor(private authService:AuthService,private router:Router){}
   onLogin(){
     const data={
@@ -26,6 +29,11 @@ export class LoginComponent {
       this.authService.logInUser.next(res);
       this.router.navigate(['/feed'])
     },err=>{
+      this.loginErrMessage="Login Unsuccessful!!";
+       this.showErrorMessage=true;
+      setTimeout(() => {
+        this.showErrorMessage=false;
+      }, 2000);
       console.log('err',err)
     })
     console.log("login clicked",this.emailId,this.password)

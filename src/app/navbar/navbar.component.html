@@ -1,6 +1,6 @@
 <div class="navbar bg-base-100 shadow-sm">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">devTinder</a>
+    <a class="btn btn-ghost text-xl" routerLink="/feed">devTinder</a>
   </div>
   <div *ngIf="isLoggedInUser" class="flex gap-2">
     <p class="welcome_text">Welcome, {{ loggedInUser?.firstName }}</p>
@@ -22,13 +22,13 @@
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow profile_dropdown_container"
       >
         <li>
-          <a class="justify-between">
+          <a routerLink="/profile" class="justify-between">
             Profile
             <span class="badge">New</span>
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li (click)="onLogout()"><a>Logout</a></li>
       </ul>
     </div>
   </div>
