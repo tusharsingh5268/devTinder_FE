@@ -1,16 +1,14 @@
 <div class="card bg-base-400 w-96 shadow-sm">
   <figure>
-    <img src="{{ user.photoUrl }}" alt="Shoes" />
+    <img src="{{ photoUrl }}" alt="Shoes" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">{{ user?.firstName }} {{ user?.lastName }}</h2>
-    <p>{{ user?.about }}</p>
-    <p *ngIf="user?.age">
-      {{ user?.age }}
-    </p>
-    <p *ngIf="user?.gender">
-      {{ user?.gender }}
-    </p>
+    <h2 class="card-title">{{ firstName }} {{ lastName }}</h2>
+    <p>{{ about }}</p>
+    <span *ngIf="age"> {{ age }}, </span>
+    <span *ngIf="gender">
+      {{ gender }}
+    </span>
     <div class="card-actions justify-center my-4">
       <button class="btn btn-primary">Interested</button>
       <button class="btn btn-secondary">Ignore</button>

@@ -1,0 +1,16 @@
+.edit_header {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.profile_container {
+  width: 30%;
+}
+.profile_update {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn_container {
+  margin-left: 16%;
+  margin-top: 3%;
+}

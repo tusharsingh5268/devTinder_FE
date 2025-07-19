@@ -1,1 +1,132 @@
-<p>profile works!</p>
+<h2 class="flex justify-center edit_header">Edit Profile</h2>
+<div class="profile_update">
+  <div class="profile_container">
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">First Name:</legend>
+        <input type="text" class="input border-solid" [(ngModel)]="firstName" />
+      </fieldset>
+    </div>
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Last Name:</legend>
+        <input type="text" class="input border-solid" [(ngModel)]="lastName" />
+      </fieldset>
+    </div>
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Age:</legend>
+        <input type="number" class="input border-solid" [(ngModel)]="age" />
+      </fieldset>
+    </div>
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Gender:</legend>
+        <input type="text" class="input border-solid" [(ngModel)]="gender" />
+      </fieldset>
+    </div>
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">About:</legend>
+        <input type="text" class="input border-solid" [(ngModel)]="about" />
+      </fieldset>
+    </div>
+    <div class="form_container">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Photo URL:</legend>
+        <input type="text" class="input border-solid" [(ngModel)]="photoUrl" />
+      </fieldset>
+    </div>
+    <div class="card-actions btn_container">
+      <button class="btn btn-primary" (click)="onSaveProfile()">
+        Save Profile
+      </button>
+    </div>
+    <!-- <p
+      
+      style="margin-left: 30px; margin-top: 10px"
+      class="text-red-500"
+    >
+      
+    </p> -->
+
+    <!--  <div
+      *ngIf="showProfileErr"
+      role="alert"
+      style="background: red; color: white; margin-top: 10px"
+      class="alert alert-error"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 shrink-0 stroke-current"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span>{{ profileErrMsg }}</span>
+    </div> -->
+    <div
+      *ngIf="showProfileErr"
+      style="background: red; color: white"
+      class="toast toast-top toast-center"
+    >
+      <div class="alert alert-success">
+        <span>{{ profileErrMsg }}</span>
+      </div>
+    </div>
+    <!-- <p
+      
+      style="margin-left: 30px; margin-top: 10px"
+      class="text-green-500"
+    >
+      {{ profileSuccMsg }}
+    </p> -->
+    <!-- <div
+      *ngIf="showProfileSucc"
+      role="alert"
+      class="alert alert-success"
+      style="background: #009a00; color: white; margin-top: 10px"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 shrink-0 stroke-current"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span>{{ profileSuccMsg }}</span>
+    </div> -->
+    <div
+      *ngIf="showProfileSucc"
+      style="background: #009a00; color: white"
+      class="toast toast-top toast-center"
+    >
+      <div class="alert alert-success">
+        <span>{{ profileSuccMsg }}</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-user-card
+      [firstName]="firstName"
+      [lastName]="lastName"
+      [age]="age"
+      [gender]="gender"
+      [about]="about"
+      [photoUrl]="photoUrl"
+    >
+    </app-user-card>
+  </div>
+</div>

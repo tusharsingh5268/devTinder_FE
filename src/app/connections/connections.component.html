@@ -1,0 +1,16 @@
+<h1 class="text-bold text-5xl text-center">Connections</h1>
+<div *ngFor="let user of userConnections">
+  <div class="m-4 p-4 border rounded-lg bg-base-100 flex w-1/2 mx-auto">
+    <div>
+      <img src="{{ user?.photoUrl }}" class="w-50 h-50 rounded-full" alt="" />
+    </div>
+    <div class="mx-4">
+      <h2 class="font-bold text-xl">
+        {{ user.firstName }} {{ user.lastName }}
+      </h2>
+      <p *ngIf="user?.age">{{ user?.age }},{{ user?.gender }}</p>
+      <p>{{ user?.about }}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="showNoConnection">No Connections Found!!</div>

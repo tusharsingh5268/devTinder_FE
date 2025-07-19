@@ -10,5 +10,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user-card.component.css'
 })
 export class UserCardComponent {
-  @Input() user: any;
+  @Input() firstName: any;
+  @Input() photoUrl: any;
+  @Input() lastName: any;
+  @Input() about: any;
+  @Input() age: any;
+  @Input() gender: any;
+
 }

@@ -27,6 +27,7 @@ export class LoginComponent {
     this.authService.loginApi(data).subscribe(res=>{
       console.log('res',res)
       this.authService.logInUser.next(res);
+      this.authService.setProfileUser(res);
       this.router.navigate(['/feed'])
     },err=>{
       this.loginErrMessage="Login Unsuccessful!!";

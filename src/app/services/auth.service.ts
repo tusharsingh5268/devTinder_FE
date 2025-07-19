@@ -13,9 +13,7 @@ export class AuthService{
     logOutApi(){
         return this.http.post(environment.apiUrl+"logout",{},{withCredentials:true})
     }
-    getLoggedInProfile(){
-        return this.http.get(environment.apiUrl+"profile/view",{withCredentials:true})
-    }
+    
 
     setProfileUser(user:any){
         this.profileUser=user

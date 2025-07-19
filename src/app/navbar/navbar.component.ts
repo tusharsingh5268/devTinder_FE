@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { NgIf } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,14 +14,16 @@ import { Router, RouterLink } from '@angular/router';
 export class NavbarComponent implements OnInit {
   isLoggedInUser=false;
   loggedInUser:any;
-  constructor(private authService:AuthService,private router:Router){}
+  constructor(private authService:AuthService,private router:Router,private profileService:ProfileService){}
   ngOnInit(){
     this.authService.logInUser.subscribe(user=>{
       this.isLoggedInUser=true;
       this.loggedInUser=user;
     })
-     this.authService.getLoggedInProfile().subscribe(res=>{
+     this.profileService.getLoggedInProfile().subscribe(res=>{
+      console.log('getlOgginProfile')
         this.authService.logInUser.next(res)
+        this.authService.setProfileUser(res)
         
     },err=>{
       this.router.navigate(['/login'])
