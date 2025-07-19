@@ -1,0 +1,32 @@
+<h1 class="text-bold text-5xl text-center">Connections</h1>
+<div *ngFor="let user of requestConnections; let i = index">
+  <div class="m-4 p-4 border rounded-lg bg-base-100 flex w-1/2 mx-auto">
+    <div>
+      <img
+        src="{{ user?.fromUserId?.photoUrl }}"
+        class="w-30 h-30 rounded-full"
+        alt=""
+      />
+    </div>
+    <div class="mx-4">
+      <h2 class="font-bold text-xl">
+        {{ user.fromUserId?.firstName }} {{ user.fromUserId?.lastName }}
+      </h2>
+      <p *ngIf="user?.fromUserId?.age">
+        {{ user?.fromUserId?.age }},{{ user?.fromUserId?.gender }}
+      </p>
+      <p>{{ user?.fromUserId?.about }}</p>
+    </div>
+    <div class="card-actions justify-center my-10 mx-10">
+      <button class="btn btn-primary" (click)="onReviewClick('accepted', i)">
+        Accept
+      </button>
+      <button class="btn btn-secondary" (click)="onReviewClick('rejected', i)">
+        Reject
+      </button>
+    </div>
+  </div>
+</div>
+<h1 *ngIf="showNoRequestConnection" class="text-center my-10">
+  No Requests Found!!
+</h1>

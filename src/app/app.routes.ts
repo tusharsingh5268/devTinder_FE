@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { FeedComponent } from './feed/feed.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ConnectionsComponent } from './connections/connections.component';
+import { RequestConnectionsComponent } from './request-connections/request-connections.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,11 @@ export const routes: Routes = [
     {
         path:"connections",
         component:ConnectionsComponent
+    },
+     {
+        path:"requests",
+        component:RequestConnectionsComponent
     }
+
 
 ];

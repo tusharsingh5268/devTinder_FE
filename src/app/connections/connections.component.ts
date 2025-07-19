@@ -6,13 +6,13 @@ import { UserCardComponent } from '../user-card/user-card.component';
 @Component({
   selector: 'app-connections',
   standalone: true,
-  imports: [NgFor,UserCardComponent,NgIf],
+  imports: [NgFor,NgIf],
   templateUrl: './connections.component.html',
   styleUrl: './connections.component.css'
 })
 export class ConnectionsComponent implements OnInit {
   constructor(private connectionService:ConnectionsService){}
-  showNoConnection:boolean=true;
+  showNoConnection:boolean=false;
   userConnections:any=[];
   ngOnInit(): void {
     this.connectionService.getAllConnections().subscribe((res:any)=>{
