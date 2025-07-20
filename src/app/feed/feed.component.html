@@ -6,6 +6,11 @@
     [gender]="user.gender"
     [about]="user.about"
     [photoUrl]="user.photoUrl"
+    [showBtn]="showUserCardBtn"
+    [id]="user._id"
   >
   </app-user-card>
+</div>
+<div *ngIf="showNoUser" class="showNoUser text-center my-10">
+  No new user found!!
 </div>

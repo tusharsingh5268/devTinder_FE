@@ -3,18 +3,18 @@ import {
   FormsModule
 } from "@angular/forms";
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule,NgIf,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  emailId:string="chetansingh@gmail.com";
-  password:string="Chetan@123";
+  emailId:string="";
+  password:string="";
   loginErrMessage:string="";
   showErrorMessage:boolean=false;
   constructor(private authService:AuthService,private router:Router){}
@@ -25,7 +25,6 @@ export class LoginComponent {
 
     }
     this.authService.loginApi(data).subscribe(res=>{
-      console.log('res',res)
       this.authService.logInUser.next(res);
       this.authService.setProfileUser(res);
       this.router.navigate(['/feed'])
@@ -35,9 +34,7 @@ export class LoginComponent {
       setTimeout(() => {
         this.showErrorMessage=false;
       }, 2000);
-      console.log('err',err)
     })
-    console.log("login clicked",this.emailId,this.password)
 
   }
 }

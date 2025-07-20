@@ -9,9 +9,13 @@
     <span *ngIf="gender">
       {{ gender }}
     </span>
-    <div class="card-actions justify-center my-4">
-      <button class="btn btn-primary">Interested</button>
-      <button class="btn btn-secondary">Ignore</button>
+    <div *ngIf="showBtn" class="card-actions justify-center my-4">
+      <button class="btn btn-primary" (click)="cardButtonClicked('interested')">
+        Interested
+      </button>
+      <button class="btn btn-secondary" (click)="cardButtonClicked('ignored')">
+        Ignore
+      </button>
     </div>
   </div>
 </div>

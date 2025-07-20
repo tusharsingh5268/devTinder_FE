@@ -16,7 +16,6 @@ export class ConnectionsComponent implements OnInit {
   userConnections:any=[];
   ngOnInit(): void {
     this.connectionService.getAllConnections().subscribe((res:any)=>{
-        console.log('res from connections',res?.data)
         this.userConnections=res?.data;
         if(this.userConnections?.length === 0){
           this.showNoConnection=true;

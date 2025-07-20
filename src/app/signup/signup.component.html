@@ -6,12 +6,29 @@
       <h2 class="card-title justify-center">Login</h2>
       <div>
         <fieldset class="fieldset">
-          <legend class="fieldset-legend">Email Id</legend>
+          <legend class="fieldset-legend">First Name</legend>
           <input
             type="email"
             class="input border-solid"
-            placeholder="Type here"
+            name="firstName"
+            [(ngModel)]="firstName"
+          />
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Last Name</legend>
+          <input
+            type="text"
+            name="lastName"
+            class="input border-solid"
+            [(ngModel)]="lastName"
+          />
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Email Id</legend>
+          <input
+            type="email"
             name="emailId"
+            class="input border-solid"
             [(ngModel)]="emailId"
           />
         </fieldset>
@@ -27,10 +44,10 @@
       </div>
       <p *ngIf="showErrorMessage" class="text-red-500">{{ loginErrMessage }}</p>
       <div class="card-actions justify-center">
-        <button class="btn btn-primary" (click)="onLogin()">Login</button>
+        <button class="btn btn-primary" (click)="onSignup()">Sign Up</button>
       </div>
-      <p routerLink="/signup" style="margin-left: 30%; cursor: pointer">
-        New User? Signup
+      <p routerLink="/login" style="margin-left: 30%; cursor: pointer">
+        Existing User? Login Here
       </p>
     </div>
   </div>

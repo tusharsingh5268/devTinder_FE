@@ -12,10 +12,12 @@ import { NgIf } from '@angular/common';
   styleUrl: './profile.component.css',
 })
 export class ProfileComponent implements OnInit {
+  id: any;
   constructor(
     private authService: AuthService,
     private profileService: ProfileService
   ) {}
+  showUserCardBtn:boolean=false;
   user: any;
   firstName: string = '';
   lastName: string = '';
@@ -45,6 +47,7 @@ export class ProfileComponent implements OnInit {
     this.gender = user?.gender;
     this.about = user?.about;
     this.photoUrl = user?.photoUrl;
+    this.id=user?._id
     console.log('this.firstName', this.firstName);
   }
 

@@ -4,33 +4,37 @@ import { FeedComponent } from './feed/feed.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ConnectionsComponent } from './connections/connections.component';
 import { RequestConnectionsComponent } from './request-connections/request-connections.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
-    {
-        path:"",
-        redirectTo:"/login",
-        pathMatch: 'full'
-    },
-    {
-        path:"login",
-        component:LoginComponent
-    },
-    {
-        path:"feed",
-        component:FeedComponent
-    },
-    {
-        path:"profile",
-        component:ProfileComponent
-    },
-    {
-        path:"connections",
-        component:ConnectionsComponent
-    },
-     {
-        path:"requests",
-        component:RequestConnectionsComponent
-    }
-
-
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  
+  {
+    path: 'feed',
+    component: FeedComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'connections',
+    component: ConnectionsComponent,
+  },
+  {
+    path: 'requests',
+    component: RequestConnectionsComponent,
+  },
 ];

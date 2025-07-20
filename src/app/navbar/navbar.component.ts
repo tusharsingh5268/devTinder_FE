@@ -21,13 +21,13 @@ export class NavbarComponent implements OnInit {
       this.loggedInUser=user;
     })
      this.profileService.getLoggedInProfile().subscribe(res=>{
-      console.log('getlOgginProfile')
         this.authService.logInUser.next(res)
         this.authService.setProfileUser(res)
+         this.router.navigate(['/profile'])
         
     },err=>{
-      this.router.navigate(['/login'])
-      console.log("Feed Error",err)
+      this.router.navigate(['/signup'])
+      this.isLoggedInUser=false;
     })
     
   }
@@ -35,11 +35,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
     this.isLoggedInUser=false;
    this.authService.logOutApi().subscribe(res=>{
-      console.log('res',res)
       
       this.router.navigate(['/login'])
    },err=>{
-    console.log('logout api',err)
    })
    
   }
